@@ -18,10 +18,10 @@ object MainCommand {
         createHelper()
     }
 
-    @CommandBody(permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
+    @CommandBody(permission = "playercdk.admin")
     val kit = KitCommand
 
-    @CommandBody(permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
+    @CommandBody(permission = "playercdk.admin")
     val code = CodeCommand
 
     /**
