@@ -12,15 +12,15 @@ import java.util.*
  * playercdk code add fixed <kit> <code> <limit>
  * playercdk code add random <kit> <amount> <limit>
  */
-@CommandHeader(name = "playercdkcode", permission = "playercdk.admin", permissionDefault = PermissionDefault.OP)
+@CommandHeader(name = "playercdkcode", permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
 object CodeCommand {
 
-    @CommandBody
+    @CommandBody(permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
     val main = mainCommand {
         createHelper()
     }
 
-    @CommandBody
+    @CommandBody(permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
     val add = subCommand {
         dynamic("type") {
             suggestion<CommandSender> { _, _ -> listOf("fixed", "random") }

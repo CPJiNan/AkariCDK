@@ -13,21 +13,21 @@ import taboolib.module.kether.KetherShell
 @CommandHeader(name = "playercdk", aliases = ["cdk"], permission = "playercdk.default", permissionDefault = PermissionDefault.TRUE)
 object MainCommand {
 
-    @CommandBody
+    @CommandBody(permission = "playercdk.default", permissionDefault = PermissionDefault.TRUE)
     val main = mainCommand {
         createHelper()
     }
 
-    @CommandBody
+    @CommandBody(permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
     val kit = KitCommand
 
-    @CommandBody
+    @CommandBody(permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
     val code = CodeCommand
 
     /**
      * playercdk exchange <code>
      */
-    @CommandBody
+    @CommandBody(permission = "playercdk.default", permissionDefault = PermissionDefault.TRUE)
     val exchange = subCommand {
         dynamic("code") {
             execute<ProxyCommandSender> { sender, context, _ ->

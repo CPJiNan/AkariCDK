@@ -10,15 +10,15 @@ import taboolib.module.chat.colored
  * playercdk kit create <kit>
  * playercdk kit delete <kit>
  */
-@CommandHeader(name = "playercdkkit", permission = "playercdk.admin", permissionDefault = PermissionDefault.OP)
+@CommandHeader(name = "playercdkkit", permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
 object KitCommand {
 
-    @CommandBody
+    @CommandBody(permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
     val main = mainCommand {
         createHelper()
     }
 
-    @CommandBody
+    @CommandBody(permission = "playercdk.admin", permissionDefault = PermissionDefault.FALSE)
     val create = subCommand {
         dynamic("kit") {
             execute<ProxyCommandSender> { sender, context, _ ->
