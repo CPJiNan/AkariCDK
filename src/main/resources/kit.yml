@@ -1,0 +1,5 @@
+kit:
+  新春礼包:
+    enable: true
+    action:
+      - "tell §e§l礼包兑换成功!"

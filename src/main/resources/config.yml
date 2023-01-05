@@ -1,0 +1,24 @@
+# 全局设置
+options:
+  # bStats数据统计
+  metrics: true
+  # 数据库相关配置
+  database:
+    # 数据储存类型
+    # 可用: LOCAL, SQL
+    use: LOCAL
+    # 数据储存配置
+    source:
+      SQL:
+        host: localhost
+        port: 3306
+        user: root
+        password: root
+        database: test
+        table: playercdk
+# 模块设置
+module:
+  # 兑换码模块
+  CDK:
+    # 兑换码模块
+    enable: true
