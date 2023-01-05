@@ -3,10 +3,7 @@ package me.cpjinan.playercdk.commands
 import me.cpjinan.playercdk.manager.ConfigManager
 import org.bukkit.command.CommandSender
 import taboolib.common.platform.ProxyCommandSender
-import taboolib.common.platform.command.CommandBody
-import taboolib.common.platform.command.CommandHeader
-import taboolib.common.platform.command.mainCommand
-import taboolib.common.platform.command.subCommand
+import taboolib.common.platform.command.*
 import taboolib.expansion.createHelper
 import taboolib.module.chat.colored
 import java.util.*
@@ -15,7 +12,7 @@ import java.util.*
  * playercdk code add fixed <kit> <code> <limit>
  * playercdk code add random <kit> <amount> <limit>
  */
-@CommandHeader(name = "playercdkcode", permission = "playercdk.admin")
+@CommandHeader(name = "playercdkcode", permission = "playercdk.admin", permissionDefault = PermissionDefault.OP)
 object CodeCommand {
 
     @CommandBody

@@ -10,24 +10,24 @@ import taboolib.expansion.setupDataContainer
 import taboolib.module.chat.colored
 import taboolib.module.kether.KetherShell
 
-@CommandHeader(name = "playercdk", aliases = ["cdk"], permission = "playercdk.default")
+@CommandHeader(name = "playercdk", aliases = ["cdk"], permission = "playercdk.default", permissionDefault = PermissionDefault.TRUE)
 object MainCommand {
 
-    @CommandBody(permission = "playercdk.default")
+    @CommandBody
     val main = mainCommand {
         createHelper()
     }
 
-    @CommandBody(permission = "playercdk.admin")
+    @CommandBody
     val kit = KitCommand
 
-    @CommandBody(permission = "playercdk.admin")
+    @CommandBody
     val code = CodeCommand
 
     /**
      * playercdk exchange <code>
      */
-    @CommandBody(permission = "playercdk.default")
+    @CommandBody
     val exchange = subCommand {
         dynamic("code") {
             execute<ProxyCommandSender> { sender, context, _ ->
