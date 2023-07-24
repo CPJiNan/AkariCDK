@@ -16,7 +16,7 @@ taboolib {
     install("expansion-command-helper")
     install("expansion-player-database")
     classifier = null
-    version = "6.0.10-35"
+    version = "6.0.11-27"
 
     description {
         contributors {
