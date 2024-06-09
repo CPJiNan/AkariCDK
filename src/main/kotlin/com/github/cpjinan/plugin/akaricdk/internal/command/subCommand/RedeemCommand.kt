@@ -6,7 +6,6 @@ import com.github.cpjinan.plugin.akaricdk.internal.manager.DatabaseManager
 import org.bukkit.Bukkit
 import taboolib.common.platform.ProxyCommandSender
 import taboolib.common.platform.command.subCommand
-import taboolib.common.platform.function.adaptPlayer
 import taboolib.expansion.createHelper
 import taboolib.module.lang.sendLang
 
