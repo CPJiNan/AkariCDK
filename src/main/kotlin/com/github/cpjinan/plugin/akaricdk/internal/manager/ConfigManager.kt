@@ -8,6 +8,12 @@ object ConfigManager {
     @Config("settings.yml", autoReload = false)
     lateinit var settings: ConfigFile
 
+    @Config("code.yml", autoReload = false)
+    lateinit var code: ConfigFile
+
+    @Config("kit.yml", autoReload = false)
+    lateinit var kit: ConfigFile
+
     // Config Version
     const val VERSION = 1
 
@@ -23,5 +29,8 @@ object ConfigManager {
     fun getCborSection() = settings.getConfigurationSection("Database.CBOR")!!
     fun getSqlHost() = settings.getHost("Database.SQL")
     fun getSqlTable() = settings.getString("Database.SQL.table")!!
+
+    // Code
+    fun getCodeList() = code.getStringList("Redeem-Code")
 
 }

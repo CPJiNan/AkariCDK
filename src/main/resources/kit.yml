@@ -1,0 +1,5 @@
+# http://kether.tabooproject.org/list.html
+Kit:
+  Minecraft:
+    Action:
+      - command inline "give {{sender}} apple 1" as op

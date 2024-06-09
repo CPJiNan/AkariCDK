@@ -25,3 +25,7 @@ Config-Update:
 Database-Get-Value: "&7获取到表 &f{0} &7中索引 &f{1} &7下键 &f{2} &7的值为 &f{3} &7."
 Database-Set-Value: "&7已设置表 &f{0} &7中索引 &f{1} &7下键 &f{2} &7的值为 &f{3} &7."
 Database-Save: "&7数据已保存."
+# 兑换码相关
+Redeem-Success: "&7兑换成功."
+Invalid-Code: "&7无效的兑换码."
+Code-Used: "&7兑换码已被使用."
