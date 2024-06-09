@@ -24,7 +24,7 @@ object DatabaseManager {
             }
 
             else -> {
-                throw IllegalArgumentException("unknown dbType")
+                throw IllegalArgumentException("Unknown dbType.")
             }
         }
     }
