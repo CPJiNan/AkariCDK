@@ -10,17 +10,17 @@ class DbSql : Database {
     private val dataSource by lazy { host.createDataSource() }
     private val sqlTable = Table(ConfigManager.getSqlTable(), host) {
         add("table") {
-            type(ColumnTypeSQL.VARCHAR, 255) {
+            type(ColumnTypeSQL.VARCHAR, 64) {
                 options(ColumnOptionSQL.KEY)
             }
         }
         add("index") {
-            type(ColumnTypeSQL.VARCHAR, 255) {
+            type(ColumnTypeSQL.VARCHAR, 64) {
                 options(ColumnOptionSQL.KEY)
             }
         }
         add("key") {
-            type(ColumnTypeSQL.VARCHAR, 255) {
+            type(ColumnTypeSQL.VARCHAR, 64) {
                 options(ColumnOptionSQL.KEY)
             }
         }
