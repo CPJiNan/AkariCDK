@@ -1,1 +1,1 @@
-rootProject.name="PlayerCDK"
+rootProject.name = "AkariCDK"

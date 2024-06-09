@@ -1,0 +1,29 @@
+# English Language File Contributor: YangXiaoMian
+
+# Plugin-related
+Plugin-Loading: '&7Loading &3Akari&bCDK&8&f... &8{0}'
+Plugin-Enabled: '&8[&3Akari&bCDK&8] &bInfo &8| &6Plugin loaded.'
+Plugin-Disable: '&8[&3Akari&bCDK&8] &bInfo &8| &6Plugin unloaded.'
+Plugin-Reloaded: '&8[&3Akari&bCDK&8] &bInfo &8| &6Plugin reloaded.'
+Plugin-Update:
+  - '&r===============[&e&lPlugin Update&r]=============='
+  - '&r| &rPlugin &6AkariCDK &7=>'
+  - '&r| &b◈ &rA new plugin version has been found!'
+  - '&r| &b◈ &rLatest version: %latestVersion%'
+  - '&r| &b◈ &rCurrent version: %currentVersion%'
+  - '&r| &b◈ &rView details: https://www.spigotmc.org/resources/'
+  - '&r===============[&e&lPlugin Update&r]=============='
+No-Permission: "&cNo permission for the current operation!"
+# Config-related
+Config-Update:
+  - '&r===============[&e&lConfig Update&r]=============='
+  - '&r| &6Config &7=>'
+  - '&r| &b◈ &rA new config version has been found!'
+  - '&r| &b◈ &rLatest version: %latestVersion%'
+  - '&r| &b◈ &rCurrent version: %currentVersion%'
+  - '&r| &b◈ &rPlease save the backup and regenerate the config file in lang folder'
+  - '&r===============[&e&lConfig Update&r]=============='
+# Database-related
+Database-Get-Value: "&7获取到表 &f{0} &7中索引 &f{1} &7下键 &f{2} &7的值为 &f{3} &7."
+Database-Set-Value: "&7已设置表 &f{0} &7中索引 &f{1} &7下键 &f{2} &7的值为 &f{3} &7."
+Database-Save: "&7数据已保存."

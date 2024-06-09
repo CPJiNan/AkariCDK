@@ -1,36 +1,39 @@
+import io.izzel.taboolib.gradle.*
+
 plugins {
-    java
-    id("io.izzel.taboolib") version "1.51"
-    id("org.jetbrains.kotlin.jvm") version "1.5.10"
+    `java-library`
+    `maven-publish`
+    id("io.izzel.taboolib") version "2.0.11"
+    id("org.jetbrains.kotlin.jvm") version "1.9.22"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
 }
 
 taboolib {
-    install("common")
-    install("common-5")
-    install("module-chat")
-    install("module-configuration")
-    install("module-metrics")
-    install("module-database")
-    install("module-kether")
-    install("platform-bukkit")
-    install("expansion-command-helper")
-    install("expansion-player-database")
-    classifier = null
-    version = "6.0.11-27"
-
+    env {
+        install(
+            UNIVERSAL,
+            UI,
+            KETHER,
+            METRICS,
+            DATABASE,
+            EXPANSION_JAVASCRIPT,
+            EXPANSION_PLAYER_DATABASE,
+            BUKKIT_ALL
+        )
+    }
     description {
-        contributors {
-            name("CPJiNan")
-        }
+        contributors { name("CPJiNan") }
         dependencies {
-//            name("").optional(true)
+            name("PlaceholderAPI").optional(true)
         }
     }
-
+    version { taboolib = "6.1.1-beta17" }
+    relocate("kotlinx.serialization", "kotlinx.serialization160")
 }
 
 repositories {
     mavenCentral()
+    maven(url = "https://mvn.lumine.io/repository/maven-public/")
 }
 
 dependencies {
@@ -38,15 +41,13 @@ dependencies {
     compileOnly("ink.ptms.core:v11902:11902-minimize:mapped")
     compileOnly("ink.ptms.core:v11902:11902-minimize:universal")
     compileOnly(kotlin("stdlib"))
+    taboo("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    taboo("org.jetbrains.kotlinx:kotlinx-serialization-cbor:1.6.0")
     compileOnly(fileTree("libs"))
 }
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
-}
-
-tasks.withType<Jar> {
-//    destinationDir = file()
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
