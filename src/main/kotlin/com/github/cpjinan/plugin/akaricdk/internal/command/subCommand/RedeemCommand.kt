@@ -31,7 +31,7 @@ object RedeemCommand {
                 if (isReusable) {
                     val hasUsedCode = DatabaseManager.getDatabase().getValue("Player", sender.name, codeKey).toBoolean()
                     if (!hasUsedCode) {
-                        kitAction.evalKether(Bukkit.getPlayerExact(sender.name)!!)
+                        kitAction.evalKether(Bukkit.getPlayer(sender.name)!!)
                         DatabaseManager.getDatabase().setValue("Player", sender.name, codeKey, "true")
                         sender.sendLang("Redeem-Success")
                     } else {
@@ -41,7 +41,7 @@ object RedeemCommand {
                     val updatedList = codeList.filterNot { it == code }
                     ConfigManager.code["Redeem-Code"] = updatedList
                     ConfigManager.code.saveToFile(ConfigManager.code.file)
-                    kitAction.evalKether(Bukkit.getPlayerExact(sender.name)!!)
+                    kitAction.evalKether(Bukkit.getPlayer(sender.name)!!)
                     sender.sendLang("Redeem-Success")
                 }
             }
