@@ -33,7 +33,7 @@ Redeem-Invalid-Code: "&cInvalid code."
 Redeem-Code-Used: "&cCode has been used."
 Redeem-About:
   - "\n"
-  - "&fEnter redemption Code.\n"
+  - "&fEnter redemption code.\n"
   - "\n"
   - "&fAbout Code Redemption\n"
   - "&f1. After redeeming a code, you will receive the redeemed item.\n"
