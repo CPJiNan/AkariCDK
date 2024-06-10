@@ -1,12 +1,13 @@
 package com.github.cpjinan.plugin.akaricdk.internal.command
 
+import com.github.cpjinan.plugin.akaricdk.internal.command.subCommand.CodeCommand
 import com.github.cpjinan.plugin.akaricdk.internal.command.subCommand.DatabaseCommand
 import com.github.cpjinan.plugin.akaricdk.internal.command.subCommand.RedeemCommand
-import taboolib.common.platform.command.CommandBody
-import taboolib.common.platform.command.CommandHeader
-import taboolib.common.platform.command.PermissionDefault
-import taboolib.common.platform.command.mainCommand
+import com.github.cpjinan.plugin.akaricdk.internal.manager.ConfigManager
+import taboolib.common.platform.ProxyCommandSender
+import taboolib.common.platform.command.*
 import taboolib.expansion.createHelper
+import taboolib.module.lang.sendLang
 
 @CommandHeader(
     name = "akaricdk",
@@ -18,9 +19,25 @@ object MainCommand {
     @CommandBody(permission = "akaricdk.default", permissionDefault = PermissionDefault.TRUE)
     val main = mainCommand { createHelper() }
 
+    @CommandBody(permission = "akaricdk.default", permissionDefault = PermissionDefault.TRUE)
+    val help = mainCommand { createHelper() }
+
     @CommandBody(permission = "akaricdk.admin")
     val database = DatabaseCommand.database
 
-    @CommandBody(permission = "akaricdk.default")
+    @CommandBody(permission = "akaricdk.default", permissionDefault = PermissionDefault.TRUE)
     val redeem = RedeemCommand.redeem
+
+    @CommandBody(permission = "akaricdk.admin")
+    val code = CodeCommand.code
+
+    @CommandBody(permission = "akaricdk.admin")
+    val reload = subCommand {
+        execute { sender: ProxyCommandSender, _: CommandContext<ProxyCommandSender>, _: String ->
+            ConfigManager.settings.reload()
+            ConfigManager.code.reload()
+            ConfigManager.kit.reload()
+            sender.sendLang("Plugin-Reloaded")
+        }
+    }
 }

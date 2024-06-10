@@ -16,14 +16,14 @@ object RedeemCommand {
             execute<ProxyCommandSender> { sender, context, _ ->
                 val codeInput = context["code"]
                 val codeList = ConfigManager.getCodeList()
-                val code = codeList.find { it.startsWith("$codeInput:") }
+                val code = codeList.find { it.startsWith("$codeInput|") }
 
                 if (code == null) {
                     sender.sendLang("Invalid-Code")
                     return@execute
                 }
 
-                val codeParts = code.split(":")
+                val codeParts = code.split("|")
                 val isReusable = codeParts[2].toBoolean()
                 val codeKey = codeParts[0]
                 val kitAction = ConfigManager.kit.getStringList("Kit.${codeParts[1]}.Action")
