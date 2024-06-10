@@ -11,7 +11,7 @@ Plugin-Update:
   - '&r| &b◈ &rA new plugin version has been found!'
   - '&r| &b◈ &rLatest version: %latestVersion%'
   - '&r| &b◈ &rCurrent version: %currentVersion%'
-  - '&r| &b◈ &rView details: https://www.spigotmc.org/resources/'
+  - '&r| &b◈ &rView details: https://www.spigotmc.org/resources/117225/'
   - '&r===============[&e&lPlugin Update&r]=============='
 No-Permission: "&cNo permission for the current operation!"
 # Config-related
