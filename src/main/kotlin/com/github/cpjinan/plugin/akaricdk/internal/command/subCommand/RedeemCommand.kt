@@ -12,14 +12,14 @@ import taboolib.module.lang.sendLang
 object RedeemCommand {
     val redeem = subCommand {
         createHelper()
-        dynamic("code") {
+        dynamic("code", optional = true) {
             execute<ProxyCommandSender> { sender, context, _ ->
                 val codeInput = context["code"]
                 val codeList = ConfigManager.getCodeList()
                 val code = codeList.find { it.startsWith("$codeInput|") }
 
                 if (code == null) {
-                    sender.sendLang("Invalid-Code")
+                    sender.sendLang("Redeem-Invalid-Code")
                     return@execute
                 }
 
@@ -35,7 +35,7 @@ object RedeemCommand {
                         DatabaseManager.getDatabase().setValue("Player", sender.name, codeKey, "true")
                         sender.sendLang("Redeem-Success")
                     } else {
-                        sender.sendLang("Code-Used")
+                        sender.sendLang("Redeem-Code-Used")
                     }
                 } else {
                     val updatedList = codeList.filterNot { it == code }

@@ -27,7 +27,18 @@ Database-Set-Value: "&7已设置表 &f{0} &7中索引 &f{1} &7下键 &f{2} &7的
 Database-Save: "&7数据已保存."
 # 兑换码相关
 Redeem-Success: "&7兑换成功."
-Invalid-Code: "&7无效的兑换码."
-Code-Used: "&7兑换码已被使用."
+Redeem-Invalid-Code: "&7无效的兑换码."
+Redeem-Code-Used: "&7兑换码已被使用."
 Create-Code: "&7已创建兑换码 {0}."
 Delete-Code: "&7已删除兑换码 {0}."
+# 界面相关
+UI-Display: "&f使用兑换码"
+UI-Chat: "&7请在聊天框内输入兑换码."
+UI-Book:
+  - "兑换说明\n"
+  - "1. 兑换码兑换成功后，系统将自动发放奖品；\n"
+  - "2. 请注意兑换码的兑换条件与使用期限，超出限制则无法兑换；\n"
+  - "3. 兑换码兑换后无法撤回，请仔细确认登入账号是否为需要领取的账号； \n"
+  - "4. 若兑换时遇到问题，请联系服务器管理员。"
+UI-Timeout: "&c操作超时."
+UI-Canceled: "&c操作取消."

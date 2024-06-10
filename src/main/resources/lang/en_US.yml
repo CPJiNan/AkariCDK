@@ -29,7 +29,18 @@ Database-Set-Value: "&7Set value in table &f{0} &7at index &f{1} &7for key &f{2}
 Database-Save: "&7Data has been saved."
 # Redeem-Code-related
 Redeem-Success: "&7Redeem successful."
-Invalid-Code: "&7Invalid code."
-Code-Used: "&7Code has been used."
+Redeem-Invalid-Code: "&7Invalid code."
+Redeem-Code-Used: "&7Code has been used."
 Create-Code: "&7Redeem code {0} has been created."
 Delete-Code: "&7Redeem code {0} has been deleted."
+# UI-related
+UI-Display: "&fRedemption Code"
+UI-Chat: "&7Enter redemption Code."
+UI-Book:
+  - "About Code Redemption\n"
+  - "1. After redeeming a code, you will receive the redeemed item.\n"
+  - "2. Pay attention to the redemption conditions and validity period of the redemption code. A code cannot be redeemed after it expires. \n"
+  - "3. Once a code is redeemed, the redemption cannot be revoked. Make sure you log into the correct account before redeeming the code.  \n"
+  - "4. If you encounter any problems during the code redemption process, please contact Admin."
+UI-Timeout: "&cOperation Timeout."
+UI-Canceled: "&cOperation Canceled."
