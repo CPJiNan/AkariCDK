@@ -4,10 +4,6 @@ import com.github.cpjinan.plugin.akaricdk.internal.command.subCommand.CodeComman
 import com.github.cpjinan.plugin.akaricdk.internal.command.subCommand.DatabaseCommand
 import com.github.cpjinan.plugin.akaricdk.internal.command.subCommand.RedeemCommand
 import com.github.cpjinan.plugin.akaricdk.internal.manager.ConfigManager
-import com.github.cpjinan.plugin.akaricdk.internal.ui.RedeemUI.getAnvilInput
-import com.github.cpjinan.plugin.akaricdk.internal.ui.RedeemUI.getBookInput
-import com.github.cpjinan.plugin.akaricdk.internal.ui.RedeemUI.getChatInput
-import org.bukkit.Bukkit
 import taboolib.common.platform.ProxyCommandSender
 import taboolib.common.platform.command.*
 import taboolib.expansion.createHelper
@@ -28,20 +24,6 @@ object MainCommand {
 
     @CommandBody(permission = "akaricdk.default", permissionDefault = PermissionDefault.TRUE)
     val redeem = RedeemCommand.redeem
-
-    @CommandBody(permission = "akaricdk.default", permissionDefault = PermissionDefault.TRUE)
-    val ui = subCommand {
-        execute<ProxyCommandSender> { sender, _, _ ->
-            val player = Bukkit.getPlayer(sender.name)
-            val input = when(ConfigManager.getUIType()) {
-                "Book" -> player?.getBookInput()
-                "Chat" -> player?.getChatInput()
-                "Anvil" -> player?.getAnvilInput()
-                else -> return@execute
-            }
-            player?.performCommand("/akaricdk redeem $input")
-        }
-    }
 
     @CommandBody(permission = "akaricdk.admin")
     val code = CodeCommand.code

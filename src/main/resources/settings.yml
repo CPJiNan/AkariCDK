@@ -22,8 +22,6 @@ Options:
   Send-Metrics: true
   # 启用调试模式
   Debug: false
-  # 兑换界面类型 (书本Book, 聊天栏Chat, 铁砧Anvil)
-  UI-Type: Anvil
 
 ############
 # Database #

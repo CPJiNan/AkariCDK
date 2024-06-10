@@ -22,7 +22,6 @@ object ConfigManager {
     fun isEnabledCheckUpdate() = settings.getBoolean("Options.Check-Update")
     fun isEnabledSendMetrics() = settings.getBoolean("Options.Send-Metrics")
     fun isEnabledDebug() = settings.getBoolean("Options.Debug")
-    fun getUIType() = settings.getString("Options.UI-type")
 
     // Database
     fun getMethod() = settings.getString("Database.Method")

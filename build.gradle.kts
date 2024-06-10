@@ -17,6 +17,7 @@ taboolib {
             METRICS,
             DATABASE,
             EXPANSION_JAVASCRIPT,
+            EXPANSION_SUBMIT_CHAIN,
             EXPANSION_PLAYER_DATABASE,
             BUKKIT_ALL
         )

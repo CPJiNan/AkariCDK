@@ -8,6 +8,8 @@ import taboolib.common.platform.ProxyCommandSender
 import taboolib.common.platform.command.subCommand
 import taboolib.expansion.createHelper
 import taboolib.module.lang.sendLang
+import taboolib.platform.util.nextChatInTick
+import taboolib.platform.util.sendLang
 
 object RedeemCommand {
     val redeem = subCommand {
@@ -45,6 +47,18 @@ object RedeemCommand {
                     sender.sendLang("Redeem-Success")
                 }
             }
+        }
+        execute { sender: ProxyCommandSender, _, _ ->
+            val player = Bukkit.getPlayer(sender.name) ?: return@execute
+            player.sendLang("Redeem-About")
+            player.nextChatInTick(20 * 30, { input ->
+                if (input.isEmpty()) sender.sendLang("Redeem-Canceled")
+                else player.performCommand("akaricdk redeem $input")
+            }, {
+                player.sendLang("Redeem-Timeout")
+            }, {
+                player.sendLang("Redeem-Canceled")
+            })
         }
     }
 }
