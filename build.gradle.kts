@@ -3,9 +3,9 @@ import io.izzel.taboolib.gradle.*
 plugins {
     `java-library`
     `maven-publish`
-    id("io.izzel.taboolib") version "2.0.11"
-    id("org.jetbrains.kotlin.jvm") version "1.9.22"
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
+    id("io.izzel.taboolib") version "2.0.12"
+    kotlin("jvm") version "1.9.22"
+    kotlin("plugin.serialization") version "1.9.22"
 }
 
 taboolib {
@@ -28,8 +28,7 @@ taboolib {
             name("PlaceholderAPI").optional(true)
         }
     }
-    version { taboolib = "6.1.1-beta17" }
-    relocate("kotlinx.serialization", "kotlinx.serialization160")
+    version { taboolib = "6.1.1" }
 }
 
 repositories {
@@ -42,8 +41,8 @@ dependencies {
     compileOnly("ink.ptms.core:v11902:11902-minimize:mapped")
     compileOnly("ink.ptms.core:v11902:11902-minimize:universal")
     compileOnly(kotlin("stdlib"))
-    taboo("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-    taboo("org.jetbrains.kotlinx:kotlinx-serialization-cbor:1.6.0")
+    compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-cbor:1.6.2")
     compileOnly(fileTree("libs"))
 }
 
