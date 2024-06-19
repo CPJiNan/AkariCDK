@@ -20,7 +20,7 @@ object MainCommand {
     val main = mainCommand { createHelper() }
 
     @CommandBody(permission = "akaricdk.default", permissionDefault = PermissionDefault.TRUE)
-    val help = mainCommand { createHelper() }
+    val help = subCommand { createHelper() }
 
     @CommandBody(permission = "akaricdk.default", permissionDefault = PermissionDefault.TRUE)
     val redeem = RedeemCommand.redeem
