@@ -41,9 +41,9 @@ dependencies {
     compileOnly("ink.ptms.core:v11902:11902-minimize:mapped")
     compileOnly("ink.ptms.core:v11902:11902-minimize:universal")
     compileOnly(kotlin("stdlib"))
-    compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
-    compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-cbor:1.6.2")
     compileOnly(fileTree("libs"))
+    taboo("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.6.2")
+    taboo("org.jetbrains.kotlinx:kotlinx-serialization-cbor-jvm:1.6.2")
 }
 
 tasks.withType<JavaCompile> {
