@@ -3,7 +3,7 @@ import io.izzel.taboolib.gradle.*
 plugins {
     `java-library`
     `maven-publish`
-    id("io.izzel.taboolib") version "2.0.12"
+    id("io.izzel.taboolib") version "2.0.20"
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.serialization") version "1.9.22"
 }
@@ -27,7 +27,7 @@ taboolib {
             name("PlaceholderAPI").optional(true)
         }
     }
-    version { taboolib = "6.1.2-beta10" }
+    version { taboolib = "6.2.0-beta33" }
     relocate("kotlinx.serialization", "kotlinx.serialization162")
 }
 
@@ -44,6 +44,14 @@ dependencies {
     compileOnly(fileTree("libs"))
     taboo("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.6.2")
     taboo("org.jetbrains.kotlinx:kotlinx-serialization-cbor-jvm:1.6.2")
+}
+
+kotlin {
+    sourceSets.all {
+        languageSettings {
+            languageVersion = "2.0"
+        }
+    }
 }
 
 tasks.withType<JavaCompile> {
