@@ -1,6 +1,6 @@
-# Kether Actions http://kether.tabooproject.org/list.html
+# Kether 脚本动作列表 http://kether.tabooproject.org/list.html
 Kit:
   Minecraft:
     Action:
       - command inline "give {{sender}} apple 1" as op
-      - tell inline "{{ color &fMr.Black's Apple }}"
+      - tell "§fMr.Black's Apple"
